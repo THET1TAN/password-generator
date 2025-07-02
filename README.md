@@ -28,7 +28,7 @@ A modern and secure password generator built with Python and tkinter, featuring 
 ### 💻 Option 2: Run from Source Code
 1. Clone this repository:
 ```bash
-git clone https://github.com/yourusername/password-generator.git
+git clone https://github.com/THET1TAN/password-generator.git
 cd password-generator
 ```
 
