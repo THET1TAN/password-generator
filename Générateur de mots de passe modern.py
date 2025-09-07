@@ -17,8 +17,111 @@ import pyperclip # Importation de pyperclip pour copier le mot de passe génér�
 password = "" # Le mot de passe généré est stocké dans cette variable.
 password_assembly = "" # La variable qui contient les caractères à utiliser pour générer le mot de passe.
 theme_inverse = "light" # Le thème inverse de l'application est stocké dans cette variable.
+current_language = "french" # La langue actuelle de l'application (par défaut: français)
+
+# Système de traduction
+translations = {
+    "french": {
+        "window_title": "Générateur de mot de passe",
+        "main_title": "Générateur de mot de passe",
+        "copy_button": "Copier",
+        "customization_title": "Personnalisation",
+        "capital_letters": "Lettres majuscules",
+        "small_letters": "Lettres minuscules",
+        "numbers": "Chiffres",
+        "symbols": "Symboles",
+        "safe_mode": "Mode sécurisé",
+        "safe_mode_tooltip": "Le mode sécurisé permet de générer un mot de passe sans symboles pouvant poser problème dans certains cas (par exemple, dans un terminal ou dans un navigateur web).",
+        "password_length": "Longueur du mot de passe",
+        "generate_button": "Générer",
+        "reset_button": "Réinitialiser",
+        "theme_frame_title": "Changer de thème : ",
+        "language_frame_title": "Langue : ",
+        "error_title": "Erreur",
+        "error_message": "Vous devez sélectionner au moins une case !",
+        "language_switch": "English"
+    },
+    "english": {
+        "window_title": "Password Generator",
+        "main_title": "Password Generator",
+        "copy_button": "Copy",
+        "customization_title": "Customization",
+        "capital_letters": "Uppercase letters",
+        "small_letters": "Lowercase letters",
+        "numbers": "Numbers",
+        "symbols": "Symbols",
+        "safe_mode": "Safe mode",
+        "safe_mode_tooltip": "Safe mode allows generating a password without symbols that can cause problems in some cases (for example, in a terminal or web browser).",
+        "password_length": "Password length",
+        "generate_button": "Generate",
+        "reset_button": "Reset",
+        "theme_frame_title": "Change theme: ",
+        "language_frame_title": "Language: ",
+        "error_title": "Error",
+        "error_message": "You must select at least one checkbox!",
+        "language_switch": "Français"
+    }
+}
 
 # Déclaration des fonctions.
+
+# Fonction pour changer la langue.
+def change_language():
+    global current_language
+    global language_button
+    global language_button_frame
+    
+    # Changer la langue
+    if current_language == "french":
+        current_language = "english"
+    else:
+        current_language = "french"
+    
+    # Mettre à jour tous les textes de l'interface
+    update_interface_language()
+
+# Fonction pour mettre à jour les textes de l'interface
+def update_interface_language():
+    global current_language
+    texts = translations[current_language]
+    
+    # Mettre à jour le titre de la fenêtre
+    window.title(texts["window_title"])
+    
+    # Mettre à jour le titre principal
+    label.config(text=texts["main_title"])
+    
+    # Mettre à jour le bouton de copie
+    copy_button.config(text=texts["copy_button"])
+    
+    # Mettre à jour le cadre de personnalisation
+    option_frame.config(text=texts["customization_title"])
+    
+    # Mettre à jour les cases à cocher
+    capital_letters_checkbox.config(text=texts["capital_letters"])
+    small_letters_checkbox.config(text=texts["small_letters"])
+    numbers_checkbox.config(text=texts["numbers"])
+    symbols_checkbox.config(text=texts["symbols"])
+    safe_mode_checkbox.config(text=texts["safe_mode"])
+    
+    # Mettre à jour le tooltip du mode sécurisé
+    tooltip.text = texts["safe_mode_tooltip"]
+    
+    # Mettre à jour le label de longueur
+    lenght_password_label.config(text=texts["password_length"])
+    
+    # Mettre à jour les boutons
+    generate_button.config(text=texts["generate_button"])
+    reset_button.config(text=texts["reset_button"])
+    
+    # Mettre à jour le cadre de thème
+    theme_button_frame.config(text=texts["theme_frame_title"])
+    
+    # Mettre à jour le cadre de langue
+    language_button_frame.config(text=texts["language_frame_title"])
+    
+    # Mettre à jour le bouton de langue
+    language_button.config(text=texts["language_switch"])
 
 # Fonction pour générer le mot de passe.
 def generate_password(): # Définition de la fonction generate_password.
@@ -28,7 +131,8 @@ def generate_password(): # Définition de la fonction generate_password.
     symbols_checked = symbols_var.get() # On récupère la valeur de la case à cocher des symboles.
     
     if not (capital_checked or small_checked or numbers_checked or symbols_checked): # Si aucune case n'est cochée, alors on affiche une erreur et on arrête la fonction.
-        Messagebox.show_error("Vous devez sélectionner au moins une case !", "Erreur") # Affichage d'une erreur si aucune case n'est cochée.
+        texts = translations[current_language]
+        Messagebox.show_error(texts["error_message"], texts["error_title"]) # Affichage d'une erreur si aucune case n'est cochée.
         return False # Arrêt de la fonction.
     else: 
         
@@ -119,9 +223,11 @@ def change_theme():
     global theme_inverse # Appelle la variable globale "theme_inverse".
     global theme_button # Appelle la variable globale "theme_button".
     global theme_button_frame # Appelle la variable globale "theme_button_frame".
+    global language_button # Appelle la variable globale "language_button".
     global button_frame # Appelle la variable globale "button_frame".
     if style.theme_use() == "darkly": # Si le thème utilisé est "darkly", alors on change le thème pour "lightly".
         theme_button.pack_forget() # On supprime le bouton de changement de thème.
+        language_button.pack_forget() # On supprime le bouton de changement de langue.
         style_config_fonction() # On configure le style.
         style.theme_use("lumen") # On change le thème pour "lumen".
         style.configure(".", font=("Lucida Console", 10)) # On change la police de caractère pour "lumen".
@@ -132,8 +238,12 @@ def change_theme():
         theme_button.grid(row=0, column=0, sticky="nsew", padx=2, pady=2) # On place le bouton de changement de thème.
         theme_button_frame.columnconfigure(0, weight=1) # Empêche le frame de se redimensionner en largeur.
         theme_button_frame.rowconfigure(0, weight=1) # Empêche le frame de se redimensionner en hauteur.
+        # Recréer le bouton de langue avec le bon style
+        language_button = ttk.Button(language_button_frame, text=translations[current_language]["language_switch"], command=change_language, style="costum.TButton.dark")
+        language_button.grid(row=0, column=0, sticky="nsew", padx=2, pady=2)
     else: # Sinon on change le thème pour "darkly".
         theme_button.pack_forget() # On supprime le bouton de changement de thème.
+        language_button.pack_forget() # On supprime le bouton de changement de langue.
         style_config_fonction() # On configure le style.
         style.theme_use("darkly") # On change le thème pour "darkly".
         theme_inverse = "light" # On change la valeur de la variable "theme_inverse" à "light"
@@ -143,6 +253,9 @@ def change_theme():
         theme_button.grid(row=0, column=0, sticky="nsew", padx=2, pady=2) # On place le bouton de changement de thème.
         theme_button_frame.columnconfigure(0, weight=1) # Empêche le frame de se redimensionner en largeur.
         theme_button_frame.rowconfigure(0, weight=1) # Empêche le frame de se redimensionner en hauteur.
+        # Recréer le bouton de langue avec le bon style
+        language_button = ttk.Button(language_button_frame, text=translations[current_language]["language_switch"], command=change_language, style="costum.TButton.light")
+        language_button.grid(row=0, column=0, sticky="nsew", padx=2, pady=2)
     
 def style_config_fonction(): # Fonction pour configurer le style.
     global style # Appelle la variable globale style.
@@ -346,6 +459,21 @@ theme_button.grid(row=0, column=0, sticky="nsew", padx=2, pady=2)  # On place le
 theme_button_frame.columnconfigure(0, weight=1) # Empêche le bouton de se redimensionner en largeur.
 theme_button_frame.rowconfigure(0, weight=1) # Empêche le bouton de se redimensionner en hauteur.
 
+# Créez un frame pour le bouton de langue avec une taille fixe.
+language_button_frame = ttk.Labelframe(button_frame, width=217, height=40, text="Langue : ", style="costum.TLabelframe") # On crée un frame pour le bouton de changement de langue.
+language_button_frame.grid_propagate(0) # Empêche le frame de se redimensionner.
+language_button_frame.grid(row=3, column=2, padx=(50, 0), pady=10, sticky="e") # On place le frame en dessous du bouton de thème.
+
+# Définition du bouton de changement de langue.
+language_button = ttk.Button(language_button_frame, text="English", command=change_language, style="costum.TButton.light") # On crée un bouton pour changer de langue.
+language_button.grid(row=0, column=0, sticky="nsew", padx=2, pady=2)  # On place le bouton dans le frame contenant le bouton de changement de langue.
+language_button_frame.columnconfigure(0, weight=1) # Empêche le bouton de se redimensionner en largeur.
+language_button_frame.rowconfigure(0, weight=1) # Empêche le bouton de se redimensionner en hauteur.
+
 
 # démarage de la boucle principale pour la fenêtre tkinter.
+
+# Initialisation de la langue (application du français par défaut)
+update_interface_language()
+
 window.mainloop() # On lance la boucle principale de la fenêtre tkinter.
