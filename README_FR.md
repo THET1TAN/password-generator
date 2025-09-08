@@ -58,10 +58,12 @@ password-generator/
 ├── Générateur de mots de passe modern.exe    # Exécutable prêt à utiliser
 ├── Générateur de mots de passe modern.py     # Application principale (version moderne)
 ├── générateur de mots de passe.py            # ⚠️ Obsolète - ne pas utiliser
-├── icon.ico                                  # Icône de l'application
+├── icone.ico                                 # Icône de l'application
 ├── images/                                   # Captures d'écran et images de documentation
-│   ├── screenshot_dark.png                   # Aperçu du thème sombre
-│   └── screenshot_light.png                  # Aperçu du thème clair
+│   ├── screenshot_dark.png                   # Aperçu du thème sombre (Français)
+│   ├── screenshot_dark_EN.png                # Aperçu du thème sombre (English)
+│   ├── screenshot_light.png                  # Aperçu du thème clair (Français)
+│   └── screenshot_light_EN.png               # Aperçu du thème clair (English)
 ├── LICENSE                                   # Licence MIT
 ├── README.md                                 # Documentation en anglais
 ├── README_FR.md                              # Documentation en français (ce fichier)
