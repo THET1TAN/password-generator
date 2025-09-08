@@ -299,7 +299,7 @@ def resource_path(): # Fonction pour récupérer le chemin absolu du fichier.
         current_dir = sys._MEIPASS # On récupère le chemin absolu du fichier.
     else: # Sinon, le programme est exécuté en tant que script Python.
         current_dir = os.path.dirname(os.path.abspath(__file__)) # On récupère le chemin absolu du fichier.
-    icon_path = os.path.join(current_dir, "icon.ico") # On récupère le chemin absolu de l'icône et on assemble le chemin absolu du fichier avec le chemin absolu de l'icône.
+    icon_path = os.path.join(current_dir, "icone.ico") # On récupère le chemin absolu de l'icône et on assemble le chemin absolu du fichier avec le chemin absolu de l'icône.
     return icon_path # On retourne le chemin absolu de l'icône pour qu'il soit stocké dans la variable "icon_path".
         
 # création de la fenêtre principale.

@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "../correcteur_mvp/assets"
+		},
+		{
+			"path": "../correcteur_mvp/core"
+		},
+		{
+			"path": "../correcteur_mvp/R&D"
+		},
+		{
+			"path": "../correcteur_mvp/gui"
+		},
+		{
+			"path": "../correcteur_mvp/utils"
+		}
+	]
+}
