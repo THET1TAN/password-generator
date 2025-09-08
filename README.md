@@ -1,5 +1,7 @@
 # 🔐 Password Generator
 
+> **🌐 Language Options**: This documentation is available in [English](README.md) | [Français](README_FR.md)
+
 A modern and secure password generator built with Python and tkinter, featuring a beautiful UI with ttkbootstrap theming.
 
 ## 📸 Screenshots
@@ -61,7 +63,8 @@ password-generator/
 │   ├── screenshot_dark.png                   # Dark theme preview
 │   └── screenshot_light.png                  # Light theme preview
 ├── LICENSE                                   # MIT License
-├── README.md                                 # This documentation
+├── README.md                                 # English documentation (this file)
+├── README_FR.md                              # French documentation
 └── requirements.txt                          # Python dependencies
 ```
 
@@ -95,6 +98,9 @@ This section allows you to customize your password generation:
 ### 4. **🎨 Theme Controls**
 - **🌓 Theme Toggle**: Switch between dark and light interface themes
 
+### 5. **🌐 Language Controls**
+- **🔤 Language Switch**: Toggle between French and English interface languages
+
 ## 💡 Usage Tips
 
 ### 🔒 For Maximum Security:
@@ -122,12 +128,19 @@ This section allows you to customize your password generation:
 - **🛡️ Safe Mode**: Excludes potentially problematic characters for better compatibility with terminals and web browsers
 - **📏 Password Length**: Adjust from 1-64 characters using the slider
 - **🌓 Theme Toggle**: Switch between dark and light themes
+- **🌐 Language Switch**: Toggle between French (default) and English interface languages
+
+## 🌐 Language Support
+
+The application includes built-in multilingual support:
+
+- **🇫🇷 French (Default)**: The application starts in French by default
+- **🇺🇸 English**: Full English translation available via the language toggle button
+- **🔄 Easy Switching**: Click the language button in the interface to switch between French and English instantly
 
 ## 🚀 Upcoming Features
 
-- **🌐 Multi-language Support**: The application will support multiple languages including:
-  - 🇺🇸 English
-  - 🇫🇷 French
+- **🌐 Additional Languages**: More language support coming soon including:
   - 🇪🇸 Spanish
   - 🇩🇪 German
   - And more...

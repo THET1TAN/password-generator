@@ -1,5 +1,7 @@
 # 🔐 Générateur de Mots de Passe
 
+> **🌐 Options de langue** : Cette documentation est disponible en [English](README.md) | [Français](README_FR.md)
+
 Un générateur de mots de passe moderne et sécurisé développé avec Python et tkinter, doté d'une interface utilisateur élégante avec le thème ttkbootstrap.
 
 ## 📸 Captures d'écran
@@ -61,7 +63,8 @@ password-generator/
 │   ├── screenshot_dark.png                   # Aperçu du thème sombre
 │   └── screenshot_light.png                  # Aperçu du thème clair
 ├── LICENSE                                   # Licence MIT
-├── README.md                                 # Cette documentation
+├── README.md                                 # Documentation en anglais
+├── README_FR.md                              # Documentation en français (ce fichier)
 └── requirements.txt                          # Dépendances Python
 ```
 
@@ -95,6 +98,9 @@ Cette section vous permet de personnaliser la génération de votre mot de passe
 ### 4. **🎨 Contrôles de thème**
 - **🌓 Basculer le thème** : Changer entre les thèmes d'interface sombre et clair
 
+### 5. **🌐 Contrôles de langue**
+- **🔤 Changement de langue** : Basculer entre les langues d'interface française et anglaise
+
 ## 💡 Conseils d'utilisation
 
 ### 🔒 Pour une sécurité maximale :
@@ -122,12 +128,19 @@ Cette section vous permet de personnaliser la génération de votre mot de passe
 - **🛡️ Mode sécurisé** : Exclut les caractères potentiellement problématiques pour une meilleure compatibilité avec les terminaux et navigateurs web
 - **📏 Longueur du mot de passe** : Ajustez de 1-64 caractères en utilisant le curseur
 - **🌓 Basculer le thème** : Changez entre les thèmes sombre et clair
+- **🌐 Changement de langue** : Basculer entre les langues d'interface française (par défaut) et anglaise
+
+## 🌐 Support Linguistique
+
+L'application inclut un support multilingue intégré :
+
+- **🇫🇷 Français (Par défaut)** : L'application démarre en français par défaut
+- **🇺🇸 Anglais** : Traduction anglaise complète disponible via le bouton de changement de langue
+- **🔄 Changement facile** : Cliquez sur le bouton de langue dans l'interface pour basculer instantanément entre français et anglais
 
 ## 🚀 Fonctionnalités à venir
 
-- **🌐 Support multilingue** : L'application supportera plusieurs langues incluant :
-  - 🇺🇸 Anglais
-  - 🇫🇷 Français
+- **🌐 Langues supplémentaires** : Support de langues additionnelles bientôt disponible incluant :
   - 🇪🇸 Espagnol
   - 🇩🇪 Allemand
   - Et plus encore...
