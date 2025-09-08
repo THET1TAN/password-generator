@@ -309,7 +309,7 @@ style = ttk.Style() # On crée un style pour la fenêtre avec le thème personna
 style.theme_use('darkly') # On définit le thème de la fenêtre à darkly (par défaut).
 window.title("Générateur de mot de passe") # On définit le titre de la fenêtre.
 WINDOW_WIDTH = 800 # On définit la largeur de la fenêtre.
-WINDOW_HEIGHT = 505 # On définit la hauteur de la fenêtre.
+WINDOW_HEIGHT = 580 # On définit la hauteur de la fenêtre.
 window.geometry(f"{WINDOW_WIDTH}x{WINDOW_HEIGHT}") # On définit la taille de la fenêtre en fonction des variables "WINDOW_WIDTH" et "WINDOW_HEIGHT"
 window.minsize(WINDOW_WIDTH, WINDOW_HEIGHT) # On définit la taille minimum de la fenêtre en fonction des variables "WINDOW_WIDTH" et "WINDOW_HEIGHT"
 window.maxsize(WINDOW_WIDTH, WINDOW_HEIGHT)   # On définit la taille maximum de la fenêtre en fonction des variables "WINDOW_WIDTH" et "WINDOW_HEIGHT"
