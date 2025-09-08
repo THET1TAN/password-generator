@@ -7,10 +7,10 @@ A modern and secure password generator built with Python and tkinter, featuring 
 ## 📸 Screenshots
 
 ### 🌙 Dark Theme
-![Dark Theme Interface](images/screenshot_dark_EN.png)
+![Dark Theme Interface](images/screenshot_dark.png)
 
 ### ☀️ Light Theme
-![Light Theme Interface](images/screenshot_light_EN.png)
+![Light Theme Interface](images/screenshot_light.png)
 
 ## ✨ Features
 
@@ -60,8 +60,8 @@ password-generator/
 ├── générateur de mots de passe.py            # ⚠️ Deprecated - do not use
 ├── icon.ico                                  # Application icon
 ├── images/                                   # Screenshots and documentation images
-│   ├── screenshot_dark_EN.png               # Dark theme preview (English)
-│   └── screenshot_light_EN.png              # Light theme preview (English)
+│   ├── screenshot_dark.png                   # Dark theme preview
+│   └── screenshot_light.png                  # Light theme preview
 ├── LICENSE                                   # MIT License
 ├── README.md                                 # English documentation (this file)
 ├── README_FR.md                              # French documentation
